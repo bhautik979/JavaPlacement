@@ -1,10 +1,9 @@
 class subArray {
 
     public static void nestedArray(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = arr.length - 1; j >= i; j--) {
-                int start = i, end = j;
-                for (int k = i; k <= j; k++) {
+        for (int i = 0; i < arr.length; i++) {     // this give starting index 
+            for (int j = arr.length - 1; j >= i; j--) {   //this give ending index
+                for (int k = i; k <= j; k++) {     //this is pounter from start to end
 
                     System.out.print(arr[k] + " ");
                 }
