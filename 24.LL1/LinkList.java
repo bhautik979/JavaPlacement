@@ -31,7 +31,7 @@ public class LinkList {
 
     // insert to tail
 
-    public static void insertLast(int data) {
+    public void insertLast(int data) {
         node newNode = new node(data);
         size++;
         if (head == null) {
@@ -200,19 +200,24 @@ public class LinkList {
     } 
 
     //Find Middle element
-    public static node findMid() {
+    public static node findMid() {            //1-2-2-1
         node slow=head;
         node fast=head;
-        while (fast.next!=null && fast!=null  ) {
+        System.out.println("Hii");
+        while (fast!=null && fast.next!=null   ) {
             slow=slow.next;   //+1
             fast=fast.next.next;   //+2
         }
 
+        System.out.println(slow.data);
         return slow;
     }
 
-    public static int findPalindrome() {
-        //1 fing min
+    public int findPalindrome() {
+        if(head==null || head.next==null){
+            return 1;
+        }
+        //1 find mid
         node mid=findMid();
 
         //2 reverse half ll
@@ -220,15 +225,16 @@ public class LinkList {
         node curr=mid;
         node next;
         while (curr!=null) {
-            next=curr;
+            next=curr.next;
             curr.next=prev;
             prev=curr;
             curr=next;
+
         }
 
         //3 check half equal
         node leftTemp=head;
-        node rightTemp=tail;
+        node rightTemp=prev;
         while (rightTemp!=null) {
             if(leftTemp.data!=rightTemp.data){
                 return -1;
@@ -241,12 +247,14 @@ public class LinkList {
 
     public static void main(String[] args) {
         LinkList ll = new LinkList();
-        ll.insertFirst(10);
-        ll.insertFirst(20);
-        ll.insertFirst(30);
-        ll.insertFirst(40);
-        ll.insertBetween(50, 3);
-        ll.insertBetween(60, 3);
+
+        // ll.insertFirst(10);
+        // ll.insertFirst(20);
+        // ll.insertFirst(30);
+        // ll.insertFirst(40);
+        // ll.insertBetween(50, 3);
+        // ll.insertBetween(60, 3);
+
         // System.out.println(ll.size);
         // ll.printLL();
 
