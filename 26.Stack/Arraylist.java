@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Arraylist {
-    class Stack {
-        static ArrayList<Integer> s = new Arraylist<>();
+    static class Stack {
+        static ArrayList<Integer> s = new ArrayList<>();
 
         // check empty
         public static boolean isEmpty() {
@@ -11,7 +11,7 @@ public class Arraylist {
 
         // push
         public static void push(int data) {
-            s.addLast(data);
+            s.add(data);
         }
 
         // pop

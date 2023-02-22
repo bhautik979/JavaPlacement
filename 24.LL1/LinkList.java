@@ -184,6 +184,10 @@ public class LinkList {
     // remove nth element from last
     public static void removeNth(int n) {
 
+        // if(head.next==null){    
+        //     return null;
+        // }
+
         int sz = 0; // calculate size
         node temp = head;
         while (temp != null) {
@@ -193,6 +197,7 @@ public class LinkList {
 
         temp = head;
         int iTOfind = sz - n; // nth from last is (size-n+1) from first so go to sz-n and make
+        //if(iTofind==0){return head.next;}  if first element want to remove
                               // node->next->next
         int i = 1; // denote first node
         while (i < iTOfind) {
